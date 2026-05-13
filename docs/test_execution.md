@@ -12,7 +12,7 @@
 
 ### Error Modal (spec section 2.5) — Unreachable via UI
 
-The success/error receipt modal has two states: success and error. The error state could not be triggered through normal UI interaction during this test session. All paths to a server-side rejection are currently blocked:
+The error state could not be triggered through normal UI interaction during this test session. All paths to a server-side rejection are currently blocked:
 
 - **Stake out of range** — the Place Bet button is disabled client-side for any stake below €1.00 or above €100.00, so the API is never called
 - **Insufficient balance** — BUG-002: the API accepts bets that exceed the available balance instead of returning a `422`, so no error modal is shown
