@@ -110,8 +110,8 @@ automation against either rule.
 
 **Steps:**
 1. Enter stake €0.99 — record the error message shown
-2. Clear and enter stake €1.00 — try to place the bet and record the outcome
-3. Clear and enter stake €1.01 — try to place the bet and record the outcome
+2. Clear and enter stake €1.00, try to place the bet and record the outcome
+3. Clear and enter stake €1.01, try to place the bet and record the outcome
 4. Note the exact error message copy at each boundary
 
 **Expected Result (per spec):**  
@@ -128,7 +128,7 @@ The error copy in the spec reads "Minimum stake is €1.00." If the app rejects 
 
 **Risk Rationale:**  
 Allowing a bet above the user's available balance would represent a credit
-risk — the platform accepting a liability it cannot cover from the user's
+risk, the platform accepting a liability it cannot cover from the user's
 funds. This is a business-critical validation at both the UI and API layer.
 The validation must be enforced consistently: a UI-only check is insufficient
 if the API accepts an over-balance request directly.
@@ -138,10 +138,10 @@ if the API accepts an over-balance request directly.
 - A selection is active in the bet slip
 
 **Steps:**
-1. Enter stake equal to the exact current balance (e.g. €120.00) — note outcome
-2. Enter stake €120.01 (one cent over balance) — note the error message shown
-3. Enter stake €200.00 (well over balance) — note the error message shown
-4. Via API (`POST /api/place-bet`), submit a bet with `stake` exceeding the balance — note the response
+1. Enter stake equal to the exact current balance (e.g. €120.00) and note outcome
+2. Enter stake €120.01 (one cent over balance) and note the error message shown
+3. Enter stake €200.00 (well over balance) and note the error message shown
+4. Via API (`POST /api/place-bet`), submit a bet with `stake` exceeding the balance and note the response
 
 **Expected Result:**  
 - Stake equal to balance: should be accepted (no rule prohibits this)
@@ -166,9 +166,9 @@ potential dispute trigger.
 - Match list contains at least two visible matches
 
 **Steps:**
-1. Click the Home (1) button on Match A — verify it appears in the bet slip
-2. Click the Draw (X) button on the same Match A — verify the slip updates to Draw
-3. Click the Home (1) button on a different Match B — verify the slip updates to Match B / Home
+1. Click the Home (1) button on Match A and verify it appears in the bet slip
+2. Click the Draw (X) button on the same Match A and verify the slip updates to Draw
+3. Click the Home (1) button on a different Match B and verify the slip updates to Match B / Home
 4. Verify at no point does the slip show more than one active selection
 5. Verify the previously highlighted odds button on Match A is no longer active/highlighted
 
@@ -185,10 +185,9 @@ selections.
 **Priority:** High
 
 **Risk Rationale:**  
-Spec restricts betting to upcoming / pre-match events. During exploration I noticed past 
-matches show up in the list when the date filter is cleared, and the app doesn't seem to 
-stop you from picking odds on them. If that holds up at the API too, it's a serious bug 
-because the outcome is already known.
+During exploration I noticed past matches show up in the list when the date filter is 
+cleared, and the app doesn't seem to stop you from picking odds on them. If that holds
+up at the API too, it's a serious bug because the outcome is already known.
 
 **Preconditions:**
 - Date filter is cleared
