@@ -3,7 +3,8 @@
 # Sports Betting QA — Automation Framework
 
 Automation framework for the Sporty Group QA take-home assignment.  
-Tests the Single Bet Placement feature of the demo application.
+Tests the Single Bet Placement feature of the demo application.  
+Built with **Python**, **pytest**, and **Selenium WebDriver**.
 
 **App under test:** https://qae-assignment-tau.vercel.app/?user-id=candidate-W3qHs1Kb6P  
 **API docs:** https://qae-assignment-tau.vercel.app/api/docs
