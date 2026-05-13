@@ -1,3 +1,5 @@
+[![API tests](https://github.com/criptic87/sporty-qa-assignment/blob/main/.github/workflows/tests.yml/badge.svg)](https://github.com/criptic87/sporty-qa-assignment/blob/main/.github/workflows/tests.yml)
+
 # Sports Betting QA — Automation Framework
 
 Automation framework for the Sporty Group QA take-home assignment.  
@@ -12,6 +14,9 @@ Tests the Single Bet Placement feature of the demo application.
 
 ```
 sporty-qa-assignment/
+├── .github/
+│   └── workflows/
+│       └── tests.yml           # CI workflow — runs API tests on push to main
 ├── automation/
 │   ├── pages/
 │   │   └── matches_page.py     # Page Object Model for the main betting page
