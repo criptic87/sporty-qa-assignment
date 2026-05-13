@@ -14,9 +14,9 @@
 
 The error state could not be triggered through normal UI interaction during this test session. All paths to a server-side rejection are currently blocked:
 
-- **Stake out of range** — the Place Bet button is disabled client-side for any stake below €1.00 or above €100.00, so the API is never called
-- **Insufficient balance** — BUG-002: the API accepts bets that exceed the available balance instead of returning a `422`, so no error modal is shown
-- **Past matches** — BUG-003: the API accepts bets on past matches instead of returning a `422`
+- **Stake out of range** : the Place Bet button is disabled client-side for any stake below €1.00 or above €100.00, so the API is never called
+- **Insufficient balance** : BUG-002: the API accepts bets that exceed the available balance instead of returning a `422`, so no error modal is shown
+- **Past matches** : BUG-003: the API accepts bets on past matches instead of returning a `422`
 
 ---
 
@@ -174,13 +174,13 @@ balance deducted normally.
 
 **Reproduction Steps:**
 1. Navigate to the application and note the match count shown in the list header (e.g. `"103 matches"`)
-2. Apply a date filter for a single specific day — observe the count label
-3. Remove the date filter; apply an odds range filter — observe the count label
-4. Apply a combination of both filters — observe the count label
+2. Apply a date filter for a single specific day and observe the count label
+3. Remove the date filter; apply an odds range filter and observe the count label
+4. Apply a combination of both filters and observe the count label
 
 **Expected:** The match count label should update to reflect the number of matches currently visible after filters are applied. For example, if a date filter reduces the visible list to 4 matches, the label should read `"4 matches"`.
 
-**Actual:** The count label always shows the unfiltered total (e.g. `"103 matches"`) regardless of which filters are active. The match list itself filters correctly — only the count label is incorrect.
+**Actual:** The count label always shows the unfiltered total (e.g. `"103 matches"`) regardless of which filters are active. The match list itself filters correctly, only the count label is incorrect.
 
 **Business Impact:** Users receive misleading information about the number of available matches when filtering, reducing confidence in the filter functionality and the accuracy of the interface.
 
