@@ -1,4 +1,4 @@
-[![API tests](https://github.com/criptic87/sporty-qa-assignment/blob/main/.github/workflows/tests.yml/badge.svg)](https://github.com/criptic87/sporty-qa-assignment/blob/main/.github/workflows/tests.yml)
+[![API Tests](https://github.com/criptic87/sporty-qa-assignment/actions/workflows/tests.yml/badge.svg)](https://github.com/criptic87/sporty-qa-assignment/actions/workflows/tests.yml)
 
 # Sports Betting QA — Automation Framework
 
